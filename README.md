@@ -1,6 +1,17 @@
 # STOVE_DEV_CAMP_TASK_2: 블로그 개발
 ## 개요
 * http://ec2-3-37-250-39.ap-northeast-2.compute.amazonaws.com
+* 필수 스펙
+  * 메인 페이지
+  * 글 쓰기 수정 기능
+  * 글 목록 삭제 기능
+  * 댓글 기능
+* 옵션 스펙
+  * ui 디자인
+  * 관리자 도구
+  * trackback
+  * rss
+* 인증절차 없이 로그인이 되어 있다는 가정하에 작업
 
 ## EC2에서 도커 컴포즈로 Django, Nginx 두개의 도커로 구동하기.
 * 도커 컴포즈 yml파일 설정
@@ -76,7 +87,7 @@ RUN pip install -r requirements.txt # 필수 패키지 설치
 ```
 
 * uwsgi 파일 설정
-  * socket 명과 모듈 명을 내 프로젝트에 맞게 변
+  * socket 명과 모듈 명을 내 프로젝트에 맞게 적어준다. 
 ```
 # ~/docker-server/server_dev/uwsgi.ini
 [uwsgi]
