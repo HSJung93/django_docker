@@ -2,19 +2,20 @@
 ## 개요
 * http://ec2-3-37-250-39.ap-northeast-2.compute.amazonaws.com
 * 필수 스펙
-  * 메인 페이지 : "/" path를 게시판 페이지로 연결하였습니다. 
+  * 메인 페이지 : `/` path를 게시판 페이지로 연결하였습니다. 
   * 글 쓰기 수정 기능
     * 쓰기 : `pybo/views.py`의 `question_create()` 
-    * 수정 : `pybo/views.py`의 `question_modify()`, jquery-3.4.1로 알림창을 생성하였습니다.
+    * 수정 : `pybo/views.py`의 `question_modify()`
   * 글 목록 삭제 기능
-    * 삭제 : `pybo/views.py`의 `question_delete()`
+    * 삭제 : `pybo/views.py`의 `question_delete()`, jquery-3.4.1로 알림창을 생성하도록 하였습니다.
   * 댓글 기능 : `pybo/views.py`의 `answer_create()`, `answer_modify()`, `answer_delete()`
 * 옵션 스펙
   * ui 디자인 : 부트스트랩 4.5.3를 사용하였습니다. `static`, `templates`에 html/css/js 파일을 관리하였습니다.
   * 관리자 도구 : django에서 기본적으로 제공하는 admin page를 사용합니다.
+  * rss : `/feed`에 구현
   * trackback
-  * rss
 * **인증절차 없이 로그인이 되어 있다는 가정하에 작업**
+* 시간이 남아서 URL Shortner도 구현하였습니다.
 
 ## 클라우드 서비스를 이용한 배포
 * EC2에서 도커 컴포즈로 Django, Nginx 두개의 도커로 구동하였습니다.

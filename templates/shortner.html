@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container my-3">
+  <h1>URL Shortener</h1>
+<form action="" method="POST" class="post-form">
+  {% csrf_token %}
+  <div class = "input-group mb-3">
+  <input type="text" name="full_url" class="form-control" placeholder="8자로 줄일 URL"/>
+  <div class = "input-group-append">
+  <button type="submit" class="btn btn-primary">압축하기</button>
+  </div>
+  </div>
+  {% if full_url %}
+  <h5>입력하신 URL: </h5>
+  <p>
+    {{ full_url }}
+  </p>
+  <h5>압축된 URL: </h5>
+  <p>
+    {{ only_url }}
+  </p>
+  <h5>압축된 URL로 만든 다음 주소를 복사해 리다이렉트 해보세요! :)</h5>
+  <p>
+    {{ short_url }}
+  </p>
+  {% endif %}
+</form>
+</div>
+{% endblock %}
